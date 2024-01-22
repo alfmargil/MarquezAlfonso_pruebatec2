@@ -1,0 +1,12 @@
+com\logica\Turno.class
+com\JAXRSConfiguration.class
+com\logica\Ciudadano.class
+com\persistencia\exceptions\NonexistentEntityException.class
+com\servlets\SvCiudadano.class
+com\persistencia\TurnoJpaController.class
+com\logica\Controladora.class
+com\persistencia\exceptions\PreexistingEntityException.class
+com\persistencia\exceptions\IllegalOrphanException.class
+com\resources\JavaEE8Resource.class
+com\persistencia\ControladoraPersistencia.class
+com\persistencia\CiudadanoJpaController.class
