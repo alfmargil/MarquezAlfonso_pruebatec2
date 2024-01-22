@@ -31,6 +31,8 @@ public class SvCiudadano extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
+    
+    // Recibe el ciudadano a insertar en la BD
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

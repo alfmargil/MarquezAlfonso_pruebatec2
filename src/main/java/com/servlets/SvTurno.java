@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
+
 package com.servlets;
 
 import com.logica.*;
@@ -34,6 +31,8 @@ public class SvTurno extends HttpServlet {
             throws ServletException, IOException {
 
     }
+    
+    // Recibe los datos del front y dependiendo de si se ha seleccionado estado o no filtra solo por fecha o por fecha y estado
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -69,6 +68,8 @@ public class SvTurno extends HttpServlet {
         }
 
     }
+    
+    // Registra turno en la DB
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

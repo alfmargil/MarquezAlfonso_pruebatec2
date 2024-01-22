@@ -36,6 +36,7 @@ public class CiudadanoJpaController implements Serializable {
     }
     
     
+    // Crea ciudadano y lo persiste
 
     public void create(Ciudadano ciudadano) {
         EntityManager em = null;
@@ -50,6 +51,8 @@ public class CiudadanoJpaController implements Serializable {
             }
         }
     }
+    
+    // Edita ciudadano y lo persiste
 
     public void edit(Ciudadano ciudadano) throws NonexistentEntityException, Exception {
         EntityManager em = null;
@@ -73,6 +76,8 @@ public class CiudadanoJpaController implements Serializable {
             }
         }
     }
+    
+    // Elimina ciudadano y lo persiste
 
     public void destroy(int id) throws NonexistentEntityException {
         EntityManager em = null;

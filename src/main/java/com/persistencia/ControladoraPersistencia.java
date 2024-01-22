@@ -24,10 +24,14 @@ public class ControladoraPersistencia {
     public void crearTurno(Turno turno) {
         turnoJPA.create(turno);
     }
+    
+    // Devuelve una lista con todos los ciudadanos almacenados
 
     public List<Ciudadano> traerCiudadanos() {
         return ciuJPA.findCiudadanoEntities();
     }
+    
+    // Devuelve una lista con todos los turnos almacenados
     
       public List<Turno> traerTurnos() {
         return turnoJPA.findTurnoEntities();

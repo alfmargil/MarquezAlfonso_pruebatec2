@@ -6,7 +6,9 @@
         <title>Listar Turnos</title>
     </head>
     <body>
-        <h2>Listado de Turnos</h2>
+        <h2>Filtrado de Turnos</h2>
+        
+         <a class="nav-link" href ="index.jsp">Inicio</a>
 
         <form action="SvTurno" method="GET">
             <label for="fecha">Ingrese la Fecha: </label>
