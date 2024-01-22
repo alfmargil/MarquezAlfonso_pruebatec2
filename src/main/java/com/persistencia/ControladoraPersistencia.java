@@ -28,5 +28,9 @@ public class ControladoraPersistencia {
     public List<Ciudadano> traerCiudadanos() {
         return ciuJPA.findCiudadanoEntities();
     }
+    
+      public List<Turno> traerTurnos() {
+        return turnoJPA.findTurnoEntities();
+    }
 
 }

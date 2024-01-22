@@ -45,7 +45,7 @@
 <div class="button-container">
     <a class="nav-link" href ="registrarCiudadano.jsp">Crear Ciudadano</a>
     <a class="nav-link" href ="registrarTurno.jsp">Registrar Turno</a>
-    <a class="nav-link" href ="registrarCiudadano.jsp">Crear Ciudadano</a>
+    <a class="nav-link" href ="listarTurnos.jsp">Listar Turnos</a>
     <a class="nav-link" href ="registrarCiudadano.jsp">Crear Ciudadano</a>
 </div>
 

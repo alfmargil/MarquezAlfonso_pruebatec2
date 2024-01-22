@@ -12,6 +12,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +37,17 @@ public class SvTurno extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        processRequest(request, response);
+        LocalDate fecha = LocalDate.parse(request.getParameter("fecha"));
+        List<Turno> turnos= new ArrayList<>();
+        turnos = controladora.traerTurnos();
+        List<Turno> turnosFiltrados = turnos.stream().filter(turno -> turno.getFechaTurno().equals(fecha)).collect(Collectors.toList());
+        request.setAttribute("fecha", fecha);
+        request.setAttribute("turnos", turnosFiltrados);
+        request.getRequestDispatcher("listarTurnos.jsp").forward(request, response);
+ 
+        
 
     }
 
@@ -46,13 +59,14 @@ public class SvTurno extends HttpServlet {
         LocalDate fecha = LocalDate.parse(request.getParameter("fecha"));
         String tramite = request.getParameter("tramite");
         String dni = request.getParameter("dni");
+        int num = Integer.parseInt(request.getParameter("num"));
         List<Ciudadano> listaCiudadanos = new ArrayList<>();
         listaCiudadanos = controladora.traerCiudadanos();
         Ciudadano ciudadanoEncontrado = listaCiudadanos.stream()
                 .filter(ciudadano -> ciudadano.getDni().equals(dni))
                 .findFirst().orElse(null);
-        controladora.crearTurno(tramite,fecha, ciudadanoEncontrado);
-        response.sendRedirect("registrarCiudadano.jsp");
+        controladora.crearTurno(tramite,fecha, ciudadanoEncontrado,num);
+        response.sendRedirect("registrarTurno.jsp");
 
     }
 

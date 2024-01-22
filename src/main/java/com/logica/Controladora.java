@@ -21,13 +21,20 @@ public class Controladora {
         controlPersis.crearCiudadano(new Ciudadano(nombreCiudadano, apellidoCiudadano, dniCiudadano));
     }
 
-    public void crearTurno(String tramite, LocalDate fecha, Ciudadano ciudadano) {
-        controlPersis.crearTurno(new Turno(fecha,tramite,false, ciudadano));
+    public void crearTurno(String tramite, LocalDate fecha, Ciudadano ciudadano, int num) {
+        controlPersis.crearTurno(new Turno(fecha,tramite,false, ciudadano, num));
     }
 
     public List<Ciudadano> traerCiudadanos() {
         return controlPersis.traerCiudadanos();
     }
+   
+    
+    public List<Turno> traerTurnos() {
+        return controlPersis.traerTurnos();
+    }
+    
+    
     
     
 

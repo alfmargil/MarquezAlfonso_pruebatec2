@@ -25,23 +25,23 @@ public class Turno implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
     LocalDate fechaTurno;
-    static int numTurno = 0;
+    int numTurno;
     String descripcionTramite;
     Boolean estadoTramite;
-
+    
     @ManyToOne
-    @JoinColumn(name = "ciudadano_dni", referencedColumnName = "dni")
+    @JoinColumn(name = "ciudadano_id")
     private Ciudadano ciudadano;
 
     public Turno() {
     }
 
-    public Turno(LocalDate fechaTurno, String descripcionTramite, Boolean estadoTramite, Ciudadano ciudadano) {
+    public Turno(LocalDate fechaTurno, String descripcionTramite, Boolean estadoTramite, Ciudadano ciudadano, int num) {
         this.fechaTurno = fechaTurno;
-        this.numTurno = numTurno++;
         this.descripcionTramite = descripcionTramite;
         this.estadoTramite = estadoTramite;
         this.ciudadano = ciudadano;
+        this.numTurno = num;
     }
 
     public long getId() {

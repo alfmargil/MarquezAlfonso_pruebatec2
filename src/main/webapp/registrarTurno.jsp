@@ -50,6 +50,9 @@
     <body>
 
         <form action="SvTurno" method="POST">
+            
+            <label for="numero">Num. Turno</label>
+            <input type="text" id="num" name="num" required>
            
             <label for="fecha">Fecha</label>
             <input type="date" id="fecha" name="fecha" required>
